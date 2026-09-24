@@ -43,7 +43,6 @@ radial-gradient(900px 500px at 5% 12%, rgba(242,166,90,.07), transparent 60%),
 </div>
 <nav style="display:flex;gap:22px;margin-left:auto;font-size:12.5px;color:#8b98a9;flex-wrap:wrap;justify-content:flex-end">
 <a href="#pipeline" style="color:#8b98a9" data-en="Pipeline">Proceso</a>
-<a href="#optics" style="color:#8b98a9" data-en="Image formation">Formación de imagen</a>
 <a href="#caps" style="color:#8b98a9" data-en="Capabilities">Capacidades</a>
 <a href="#gallery" style="color:#8b98a9" data-en="Gallery">Galería</a>
 </nav>
@@ -83,23 +82,23 @@ radial-gradient(900px 500px at 5% 12%, rgba(242,166,90,.07), transparent 60%),
 <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f2a65a;letter-spacing:.2em">01</span>
 <h2 style="font-size:clamp(24px,3vw,36px);font-weight:600;letter-spacing:-.02em;margin:0" data-en="Structure → projection → image">Estructura → proyección → imagen</h2>
 </div>
-<p style="color:#8b98a9;font-size:15px;line-height:1.6;max-width:70ch;margin:0 0 30px" data-en="Rotate the cluster with the pointer. The middle panel is computed live from the same coordinates: projection along the beam, Z^γ weighting, probe convolution, amorphous support and Poisson noise.">Gira el cluster con el puntero. El panel central se calcula en vivo a partir de las mismas coordenadas: proyección a lo largo del haz, pesado Z^γ, convolución con la sonda, soporte amorfo y ruido de Poisson.</p>
+<p style="color:#8b98a9;font-size:15px;line-height:1.6;max-width:70ch;margin:0 0 30px" data-en="Rotate the cluster and explore the image using the controls.">Gira el cluster y explora la imagen con los controles.</p>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px;align-items:start">
 <div style="min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:#0a0d12;overflow:hidden">
 <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.07)"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8b98a9" data-en="1 · 3D STRUCTURE">1 · ESTRUCTURA 3D</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6fd3ff">{{ natoms }} at</span></div>
 <canvas ref="{{ ref3d }}" style="display:block;width:100%;aspect-ratio:1/1;cursor:grab;touch-action:none;background:radial-gradient(60% 60% at 50% 42%, #10161f, #070a0e)"></canvas>
-<div style="padding:11px 14px;font-size:11.5px;color:#7d8a9a;font-family:'IBM Plex Mono',monospace">rᵢ = (xᵢ, yᵢ, zᵢ) · r′ᵢ = R·rᵢ</div>
+<div style="padding:11px 14px;font-size:11.5px;color:#7d8a9a;font-family:'IBM Plex Mono',monospace" data-en="Interactive atomic structure">Estructura atómica interactiva</div>
 </div>
 <div style="min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:#0a0d12;overflow:hidden">
-<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.07)"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8b98a9" data-en="2 · PROJECTED POTENTIAL">2 · POTENCIAL PROYECTADO</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6fd3ff">∫V dz</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.07)"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8b98a9" data-en="2 · PROJECTED POTENTIAL">2 · POTENCIAL PROYECTADO</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6fd3ff">2D</span></div>
 <canvas ref="{{ refProj }}" style="display:block;width:100%;aspect-ratio:1/1;background:#000"></canvas>
-<div style="padding:11px 14px;font-size:11.5px;color:#7d8a9a;font-family:'IBM Plex Mono',monospace">Vₚ(x,y) = ∫ V(x,y,z) dz</div>
+<div style="padding:11px 14px;font-size:11.5px;color:#7d8a9a;font-family:'IBM Plex Mono',monospace">Vista de la estructura proyectada</div>
 </div>
 <div style="min-width:0;border:1px solid rgba(111,211,255,.28);border-radius:14px;background:#0a0d12;overflow:hidden;box-shadow:0 0 0 1px rgba(111,211,255,.06),0 24px 60px -30px rgba(111,211,255,.35)">
 <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.07)"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8b98a9" data-en="3 · SYNTHETIC MICROGRAPH">3 · MICROGRAFÍA SINTÉTICA</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#f2a65a">{{ modeLabel }}</span></div>
 <canvas ref="{{ refSim }}" style="display:block;width:100%;aspect-ratio:1/1;background:#000"></canvas>
-<div style="padding:11px 14px;font-size:11.5px;color:#7d8a9a;font-family:'IBM Plex Mono',monospace">I = O ⊛ PSF + soporte + 𝒫(I)</div>
+<div style="padding:11px 14px;font-size:11.5px;color:#7d8a9a;font-family:'IBM Plex Mono',monospace" data-en="Interactive image preview">Vista previa interactiva de imagen</div>
 </div>
 </div>
 
@@ -139,52 +138,9 @@ radial-gradient(900px 500px at 5% 12%, rgba(242,166,90,.07), transparent 60%),
 </div>
 </section>
 
-<section id="optics" style="max-width:1220px;margin:0 auto;padding:clamp(40px,5vw,80px) 22px;scroll-margin-top:80px">
-<div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px">
-<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f2a65a;letter-spacing:.2em">02</span>
-<h2 style="font-size:clamp(24px,3vw,36px);font-weight:600;letter-spacing:-.02em;margin:0" data-en="Electron microscopy image formation">Formación de imagen en microscopía electrónica</h2>
-</div>
-<p style="color:#8b98a9;font-size:15px;line-height:1.6;max-width:70ch;margin:0 0 30px" data-en="Aberration phase, contrast transfer and the spatial response of the instrument. The curve below is the effective CTF for the parameters you set above.">Fase de aberraciones, transferencia de contraste y respuesta espacial del instrumento. La curva de abajo es la CTF efectiva para los parámetros que ajustaste arriba.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px">
-<div style="min-width:0;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:#0a0d12;padding:20px">
-<div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#f2a65a;margin-bottom:16px" data-en="EFFECTIVE CONTRAST TRANSFER FUNCTION">FUNCIÓN DE TRANSFERENCIA DE CONTRASTE EFECTIVA</div>
-<canvas ref="{{ refCtf }}" style="display:block;width:100%;aspect-ratio:16/9;background:#070a0e;border-radius:8px"></canvas>
-<div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#7d8a9a;margin-top:8px"><span>0</span><span data-en="spatial frequency q (nm⁻¹)">frecuencia espacial q (nm⁻¹)</span><span>10</span></div>
-<div style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#cfd8e3;line-height:2">
-<div style="color:#8b98a9">CTF(q) = sin[χ(q)] · E(q)</div>
-<div>χ(q) = π λ Δf q² + (π/2) Cₛ λ³ q⁴</div>
-<div style="color:#8b98a9">λ = h / √(2m₀eV(1 + eV/2m₀c²)) = <span style="color:#6fd3ff">2.508 pm</span></div>
-</div>
-</div>
-<div style="min-width:0;display:grid;gap:18px;align-content:start">
-<div style="border:1px solid rgba(255,255,255,.1);border-radius:14px;background:#0a0d12;padding:20px">
-<div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#f2a65a;margin-bottom:12px" data-en="POINT SPREAD FUNCTION">FUNCIÓN DE DISPERSIÓN DE PUNTO</div>
-<div style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#e8edf4;margin-bottom:10px">I(x,y) = O(x,y) ⊛ PSF(x,y)</div>
-<p style="margin:0;color:#8b98a9;font-size:13.5px;line-height:1.6" data-en="In HAADF the probe is built in the aperture plane, A(k) = ap(k)·e^(−iχ(k)), and the PSF is |ℱ⁻¹{A}|². The result is convolved with the finite source size.">En HAADF la sonda se construye en el plano de la apertura, A(k) = ap(k)·e^(−iχ(k)), y la PSF es |ℱ⁻¹{A}|². El resultado se convoluciona con el tamaño finito de fuente.</p>
-</div>
-<div style="border:1px solid rgba(255,255,255,.1);border-radius:14px;background:#0a0d12;padding:20px">
-<div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#f2a65a;margin-bottom:12px" data-en="COHERENCE ENVELOPES">ENVOLVENTES DE COHERENCIA</div>
-<div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#cfd8e3;line-height:2">
-<div>Eₜ = exp[−½ (πλΔ)² k⁴]</div>
-<div>Eₛ = exp[−(παᶜ/λ)² (Δf λk + Cₛλ³k³)²]</div>
-</div>
-<p style="margin:10px 0 0;color:#8b98a9;font-size:13.5px;line-height:1.6" data-en="Focal spread Δ = 3.5 nm and beam divergence αᶜ = 0.15 mrad progressively attenuate high spatial frequencies.">La dispersión de foco Δ = 3.5 nm y la divergencia del haz αᶜ = 0.15 mrad atenúan progresivamente las frecuencias espaciales altas.</p>
-</div>
-<div style="border:1px solid rgba(242,166,90,.3);border-radius:14px;background:linear-gradient(180deg,rgba(242,166,90,.08),transparent);padding:20px">
-<div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#f2a65a;margin-bottom:12px" data-en="DETECTION AND NOISE">DETECCIÓN Y RUIDO</div>
-<div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#e8edf4;line-height:2">
-<div>N(x,y) ~ Poisson[I(x,y)]</div>
-<div style="color:#cfd8e3">I_final = I_estructura + I_soporte + N</div>
-</div>
-<p style="margin:10px 0 0;color:#9aa7b7;font-size:13.5px;line-height:1.6" data-en="Amorphous support texture, slow thickness variation, detector MTF, read noise and 1/f gain background.">Textura de soporte amorfo, variación lenta de espesor, MTF del detector, ruido de lectura y fondo 1/f de ganancia.</p>
-</div>
-</div>
-</div>
-</section>
-
 <section id="caps" style="max-width:1220px;margin:0 auto;padding:clamp(40px,5vw,80px) 22px;scroll-margin-top:80px">
 <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:30px">
-<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f2a65a;letter-spacing:.2em">03</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f2a65a;letter-spacing:.2em">02</span>
 <h2 style="font-size:clamp(24px,3vw,36px);font-weight:600;letter-spacing:-.02em;margin:0" data-en="Main capabilities">Capacidades principales</h2>
 </div>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden">
@@ -196,14 +152,14 @@ radial-gradient(900px 500px at 5% 12%, rgba(242,166,90,.07), transparent 60%),
 <div style="background:#0a0d12;padding:22px" style-hover="background:#0e1319"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6fd3ff;margin-bottom:10px">06</div><h3 style="margin:0 0 7px;font-size:15.5px;font-weight:600" data-en="Aberrations">Aberraciones</h3><p style="margin:0;font-size:13.5px;line-height:1.55;color:#8b98a9" data-en="Defocus, residual spherical aberration and weak astigmatism.">Desenfoque, aberración esférica residual y astigmatismo débil.</p></div>
 <div style="background:#0a0d12;padding:22px" style-hover="background:#0e1319"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6fd3ff;margin-bottom:10px">07</div><h3 style="margin:0 0 7px;font-size:15.5px;font-weight:600" data-en="Noise simulation">Simulación de ruido</h3><p style="margin:0;font-size:13.5px;line-height:1.55;color:#8b98a9" data-en="Poisson and instrumental noise generation.">Generación de ruido de Poisson e instrumental.</p></div>
 <div style="background:#0a0d12;padding:22px" style-hover="background:#0e1319"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6fd3ff;margin-bottom:10px">08</div><h3 style="margin:0 0 7px;font-size:15.5px;font-weight:600" data-en="Amorphous supports">Soportes amorfos</h3><p style="margin:0;font-size:13.5px;line-height:1.55;color:#8b98a9" data-en="Realistic backgrounds and local contrast variations.">Fondos realistas y variaciones locales de contraste.</p></div>
-<div style="background:#0a0d12;padding:22px" style-hover="background:#0e1319"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6fd3ff;margin-bottom:10px">09</div><h3 style="margin:0 0 7px;font-size:15.5px;font-weight:600" data-en="Cluster populations">Poblaciones de clusteres</h3><p style="margin:0;font-size:13.5px;line-height:1.55;color:#8b98a9" data-en="rᵢ⁽ʲ⁾ = Rⱼ·rᵢ + tⱼ — many structures in one field of view.">rᵢ⁽ʲ⁾ = Rⱼ·rᵢ + tⱼ — muchas estructuras en el mismo campo de visión.</p></div>
+<div style="background:#0a0d12;padding:22px" style-hover="background:#0e1319"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6fd3ff;margin-bottom:10px">09</div><h3 style="margin:0 0 7px;font-size:15.5px;font-weight:600" data-en="Cluster populations">Poblaciones de clusteres</h3><p style="margin:0;font-size:13.5px;line-height:1.55;color:#8b98a9" data-en="Many structures in one field of view.">Muchas estructuras en el mismo campo de visión.</p></div>
 <div style="background:#0a0d12;padding:22px" style-hover="background:#0e1319"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6fd3ff;margin-bottom:10px">10</div><h3 style="margin:0 0 7px;font-size:15.5px;font-weight:600" data-en="High-resolution output">Salida de alta resolución</h3><p style="margin:0;font-size:13.5px;line-height:1.55;color:#8b98a9" data-en="Publication-ready micrographs with automatic scale bars.">Micrografías listas para publicación con barra de escala automática.</p></div>
 </div>
 </section>
 
 <section id="gallery" style="max-width:1220px;margin:0 auto;padding:clamp(40px,5vw,80px) 22px;scroll-margin-top:80px">
 <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px">
-<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f2a65a;letter-spacing:.2em">04</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f2a65a;letter-spacing:.2em">03</span>
 <h2 style="font-size:clamp(24px,3vw,36px);font-weight:600;letter-spacing:-.02em;margin:0" data-en="Output gallery">Galería de salidas</h2>
 </div>
 <p style="color:#8b98a9;font-size:15px;line-height:1.6;max-width:70ch;margin:0 0 26px" data-en="Micrographs generated by QADMAY from AuPt cluster coordinates on amorphous carbon. Click any frame to enlarge.">Micrografías generadas por QADMAY a partir de coordenadas de clusteres AuPt sobre carbono amorfo. Haz clic en un cuadro para ampliarlo.</p>
@@ -224,7 +180,7 @@ radial-gradient(900px 500px at 5% 12%, rgba(242,166,90,.07), transparent 60%),
 
 <section style="max-width:1220px;margin:0 auto;padding:clamp(40px,5vw,80px) 22px">
 <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:24px">
-<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f2a65a;letter-spacing:.2em">05</span>
+<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#f2a65a;letter-spacing:.2em">04</span>
 <h2 style="font-size:clamp(24px,3vw,36px);font-weight:600;letter-spacing:-.02em;margin:0" data-en="Applications">Aplicaciones</h2>
 </div>
 <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:34px">
@@ -303,7 +259,6 @@ const GAL = [
   {src:'assets/g6.jpeg', tag:'HAADF · columnas', meta:'dosis 2200'}
 ];
 
-const LAMBDA = 0.002508; // nm @200 kV
 
 class Component extends DCLogic {
   state = {
@@ -316,7 +271,6 @@ class Component extends DCLogic {
     this.ref3d = React.createRef();
     this.refProj = React.createRef();
     this.refSim = React.createRef();
-    this.refCtf = React.createRef();
     this.langRef = React.createRef();
     this.refBtnAuPt = React.createRef();
     this.refBtnAu20 = React.createRef();
@@ -521,39 +475,8 @@ class Component extends DCLogic {
     });
   }
 
-  drawCtf() {
-    const cv = this.refCtf.current; if (!cv) return;
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
-    const w = Math.round((cv.clientWidth || 400) * dpr), h = Math.round(w * 9 / 16);
-    if (cv.width !== w) { cv.width = w; cv.height = h; }
-    const ctx = cv.getContext('2d');
-    ctx.clearRect(0, 0, w, h);
-    ctx.strokeStyle = 'rgba(255,255,255,.07)'; ctx.lineWidth = 1 * dpr;
-    for (let i = 1; i < 5; i++) { const y = h * i / 5; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
-    ctx.strokeStyle = 'rgba(255,255,255,.22)';
-    ctx.beginPath(); ctx.moveTo(0, h / 2); ctx.lineTo(w, h / 2); ctx.stroke();
-    const df = this.state.defocus, csnm = this.state.cs * 1e6, Dl = 3.5, ac = 0.00015;
-    ctx.beginPath();
-    for (let i = 0; i <= 400; i++) {
-      const q = (i / 400) * 10;
-      const chi = Math.PI * LAMBDA * df * q * q + (Math.PI / 2) * csnm * Math.pow(LAMBDA, 3) * Math.pow(q, 4);
-      const Et = Math.exp(-0.5 * Math.pow(Math.PI * LAMBDA * Dl, 2) * Math.pow(q, 4));
-      const inner = df * LAMBDA * q + csnm * Math.pow(LAMBDA, 3) * Math.pow(q, 3);
-      const Es = Math.exp(-Math.pow(Math.PI * ac / LAMBDA, 2) * inner * inner);
-      const v = Math.sin(chi) * Et * Es;
-      const x = (i / 400) * w, y = h / 2 - v * (h / 2 - 4 * dpr);
-      i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
-    }
-    ctx.strokeStyle = '#6fd3ff'; ctx.lineWidth = 1.8 * dpr; ctx.stroke();
-    ctx.lineTo(w, h / 2); ctx.lineTo(0, h / 2); ctx.closePath();
-    ctx.fillStyle = 'rgba(111,211,255,.10)'; ctx.fill();
-    ctx.fillStyle = 'rgba(160,175,190,.8)';
-    ctx.font = (10 * dpr) + 'px IBM Plex Mono, monospace';
-    ctx.fillText('+1', 6 * dpr, 13 * dpr);
-    ctx.fillText('−1', 6 * dpr, h - 6 * dpr);
-  }
 
-  redraw() { this.draw3d(); this.drawProj(); this.drawSim(); this.drawCtf(); }
+  redraw() { this.draw3d(); this.drawProj(); this.drawSim(); }
 
   componentDidMount() {
     this.noise(180);
@@ -612,7 +535,7 @@ class Component extends DCLogic {
     const st = this.state;
     const num = (k, f) => e => this.setState({ [k]: parseFloat(e.target.value) });
     return {
-      ref3d: this.ref3d, refProj: this.refProj, refSim: this.refSim, refCtf: this.refCtf,
+      ref3d: this.ref3d, refProj: this.refProj, refSim: this.refSim,
       langRef: this.langRef,
       refBtnAuPt: this.refBtnAuPt, refBtnAu20: this.refBtnAu20,
       refBtnHaadf: this.refBtnHaadf, refBtnHrtem: this.refBtnHrtem,
