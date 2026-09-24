@@ -1,0 +1,7 @@
+uploads/
+.thumbnail
+QADMAY.dc.html
+*.zip
+.env
+.env.*
+node_modules/
